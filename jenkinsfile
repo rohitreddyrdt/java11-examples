@@ -1,0 +1,9 @@
+//Scripted Pipeline
+node('Node1') {
+    stage('Source') { //Get the code
+        git 'https://github.com/rohitreddyrdt/java11-examples.git'
+    }
+    stage('Build') {//Compile the code and run unit tests and create package
+        sh 'mvn clean package'
+    }
+}
